@@ -1,4 +1,4 @@
-# aylin-nava-it.github.io
-Pagina con mis proyectos realizados
-hugo es bebé
+# AYLIN NAVA NAVA
+## Pagina con mis proyectos realizados
+*hugo es bebé*
 
