@@ -4,224 +4,110 @@
 
 <div align="center">
 
-  <!-- PROFILE / HERO -->
+<br>
 
-  <img src="assets/images/banner.png" alt="Aylin Nava - AI & Technology" width="100%">
+<img src="assets/images/logo.png" width="90">
 
-  <br>
+<br><br>
 
-  <h1>Hi, I'm Aylin Nava 👋🏻</h1>
+<sub>
+AI &nbsp;&nbsp; • &nbsp;&nbsp;
+DATA &nbsp;&nbsp; • &nbsp;&nbsp;
+TECHNOLOGY &nbsp;&nbsp; • &nbsp;&nbsp;
+BUSINESS
+</sub>
 
-  <h3>AI & Technology | Data | Digital Solutions | Business</h3>
-
-  <p>
-    <i>
-      Building technology solutions with business impact.
-    </i>
-  </p>
-
-  <br>
-
-  <!-- SOCIAL LINKS -->
-
-  <a href="TU_LINKEDIN">
-    <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
-  </a>
-
-  <a href="TU_PORTFOLIO">
-    <img src="https://img.shields.io/badge/Portfolio-Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white">
-  </a>
-
-  <a href="TU_EMAIL">
-    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white">
-  </a>
+<br><br>
 
 </div>
 
 
 <!-- ========================================================= -->
-<!--                         ABOUT ME                           -->
+<!--                         HERO                              -->
 <!-- ========================================================= -->
-
-## 👩🏻‍💻 About Me
-
-> Espacio para una breve presentación profesional.
-
-Soy **Aylin Nava**, estudiante de Ingeniería en Tecnologías de la Información y Gestión, interesada en la intersección entre **Artificial Intelligence, Data, Technology y Business**.
-
-Actualmente estoy desarrollando proyectos enfocados en:
-
-- 🤖 Artificial Intelligence
-- 📊 Data & Analytics
-- 💻 Technology
-- 🧠 Generative AI
-- 📈 Business & Digital Solutions
-- 🏥 HealthTech
-
-Mi objetivo es crear soluciones tecnológicas que no solamente funcionen, sino que **resuelvan problemas reales y generen impacto medible**.
-
-
-<!-- ========================================================= -->
-<!--                         TECH STACK                         -->
-<!-- ========================================================= -->
-
-## 🛠️ Tech Stack
-
-### 🤖 Artificial Intelligence
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/Generative_AI-000000?style=for-the-badge">
-  <img src="https://img.shields.io/badge/LLMs-412991?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Prompt_Engineering-FF6F00?style=for-the-badge">
-</p>
-
-
-### 📊 Data & Analytics
-
-<p>
-  <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white">
-  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white">
-</p>
-
-
-### 💻 Development & Technology
-
-<p>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-</p>
-
-
-<!-- ========================================================= -->
-<!--                     FEATURED PROJECTS                      -->
-<!-- ========================================================= -->
-
-# 🚀 Featured Projects
 
 <div align="center">
 
-<table>
+<img
+  src="assets/images/hero.png"
+  width="95%"
+  alt="Aylin Nava AI & Technology Portfolio"
+>
+
+</div>
+
+<br>
+
+<table width="100%">
 <tr>
 
-<td width="50%" valign="top">
+<td width="55%" valign="top">
 
-<h3>🤖 AI Project</h3>
+# AYLIN<br>
+# NAVA
 
-<p>
-<strong>Project Name</strong>
-</p>
-
-<p>
-Short description of the project and the problem it solves.
-</p>
+### AI & TECHNOLOGY
 
 <p>
-<img src="assets/images/project-ai.png" width="100%">
+Technology • Artificial Intelligence • Data • Digital Solutions
 </p>
-
-<p>
-<code>Python</code>
-<code>AI</code>
-<code>LLM</code>
-</p>
-
-<a href="./projects/artificial-intelligence/project-01/">
-View Project →
-</a>
 
 </td>
 
+<td width="45%" valign="bottom" align="right">
 
-<td width="50%" valign="top">
+### 01
 
-<h3>📊 Data Project</h3>
-
-<p>
-<strong>Project Name</strong>
-</p>
-
-<p>
-Short description of the project and the problem it solves.
-</p>
-
-<p>
-<img src="assets/images/project-data.png" width="100%">
-</p>
-
-<p>
-<code>Excel</code>
-<code>Power BI</code>
-<code>Analytics</code>
-</p>
-
-<a href="./projects/data-analytics/project-01/">
-View Project →
-</a>
+<sub>
+BUILDING DIGITAL<br>
+SOLUTIONS WITH<br>
+BUSINESS IMPACT.
+</sub>
 
 </td>
 
 </tr>
+</table>
 
+<br>
 
+---
+
+<!-- ========================================================= -->
+<!--                       INTRO                               -->
+<!-- ========================================================= -->
+
+<table width="100%">
 <tr>
 
-<td width="50%" valign="top">
+<td width="45%" valign="top">
 
-<h3>💻 Technology Project</h3>
-
-<p>
-<strong>Project Name</strong>
-</p>
-
-<p>
-Short description of the project and the problem it solves.
-</p>
-
-<p>
-<img src="assets/images/project-tech.png" width="100%">
-</p>
-
-<p>
-<code>Python</code>
-<code>SQL</code>
-<code>API</code>
-</p>
-
-<a href="./projects/software-development/project-01/">
-View Project →
-</a>
+# ABOUT<br>
+# ME
 
 </td>
 
+<td width="55%" valign="top">
 
-<td width="50%" valign="top">
+I'm an Information Technology & Management Engineering student
+focused on the intersection between **technology, artificial
+intelligence, data and business.**
 
-<h3>📈 Tech + Business</h3>
+<br>
 
-<p>
-<strong>Project Name</strong>
-</p>
+My goal is to transform real-world problems into practical,
+measurable and scalable digital solutions.
 
-<p>
-Short description of the project and the business problem.
-</p>
+<br>
 
-<p>
-<img src="assets/images/project-business.png" width="100%">
-</p>
+<a href="TU_LINKEDIN">
+LINKEDIN ↗
+</a>
 
-<p>
-<code>Data</code>
-<code>Business</code>
-<code>Technology</code>
-</p>
+&nbsp;&nbsp;&nbsp;
 
-<a href="./projects/technology-business/project-01/">
-View Project →
+<a href="TU_GITHUB">
+GITHUB ↗
 </a>
 
 </td>
@@ -229,110 +115,298 @@ View Project →
 </tr>
 </table>
 
-</div>
+
+<br><br>
 
 
 <!-- ========================================================= -->
-<!--                     PROJECT CATEGORIES                     -->
+<!--                    FEATURED PROJECT                       -->
 <!-- ========================================================= -->
-
-# 🧩 Projects
-
-### 🤖 Artificial Intelligence
-
-Projects related to:
-
-- Generative AI
-- Machine Learning
-- LLMs
-- AI Assistants
-- Automation
-- Prompt Engineering
-
-👉 **[Explore AI Projects](./projects/artificial-intelligence/)**
-
-
-### 📊 Data & Analytics
-
-Projects related to:
-
-- Data Analysis
-- Dashboards
-- Business Intelligence
-- Data Visualization
-- Excel
-- Power BI
-- SQL
-
-👉 **[Explore Data Projects](./projects/data-analytics/)**
-
-
-### 💻 Software & Technology
-
-Projects related to:
-
-- Programming
-- Web Development
-- APIs
-- Databases
-- Systems
-- Software Solutions
-
-👉 **[Explore Technology Projects](./projects/software-development/)**
-
-
-### 📈 Technology + Business
-
-Projects that combine:
-
-- Technology
-- Business
-- Customer Experience
-- Digital Transformation
-- HealthTech
-- Revenue & Analytics
-
-👉 **[Explore Tech + Business Projects](./projects/technology-business/)**
-
-
-<!-- ========================================================= -->
-<!--                       PROJECT IMPACT                       -->
-<!-- ========================================================= -->
-
-# 📊 Project Impact
 
 <div align="center">
 
-<table>
+<img
+  src="assets/images/featured-project.png"
+  width="95%"
+  alt="Featured Project"
+>
+
+</div>
+
+<br>
+
+<table width="100%">
+<tr>
+
+<td width="60%" valign="top">
+
+# 01
+
+## ARTIFICIAL<br>
+## INTELLIGENCE
+
+<p>
+Artificial Intelligence projects focused on automation,
+generative AI, data and intelligent digital solutions.
+</p>
+
+</td>
+
+<td width="40%" valign="top">
+
+### FEATURED
+
+**PROJECT NAME**
+
+`Python` `AI` `LLM`
+
+<br>
+
+<a href="./projects/artificial-intelligence/">
+VIEW PROJECT ↗
+</a>
+
+</td>
+
+</tr>
+</table>
+
+
+<br><br>
+
+---
+
+<!-- ========================================================= -->
+<!--                    PROJECT COLLECTION                     -->
+<!-- ========================================================= -->
+
+<div align="center">
+
+# PROJECTS
+
+<sub>
+SELECTED WORK • TECHNOLOGY • DATA • AI
+</sub>
+
+</div>
+
+<br>
+
+<table width="100%">
+<tr>
+
+<td width="50%" valign="top">
+
+<img
+  src="assets/images/project-ai.png"
+  width="100%"
+  alt="Artificial Intelligence Project"
+>
+
+<br>
+
+### 01 / AI
+
+# ARTIFICIAL<br>
+# INTELLIGENCE
+
+Generative AI, LLMs, automation
+and intelligent solutions.
+
+<br>
+
+<a href="./projects/artificial-intelligence/">
+EXPLORE ↗
+</a>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<img
+  src="assets/images/project-data.png"
+  width="100%"
+  alt="Data Analytics Project"
+>
+
+<br>
+
+### 02 / DATA
+
+# DATA &<br>
+# ANALYTICS
+
+Dashboards, data visualization,
+business intelligence and analysis.
+
+<br>
+
+<a href="./projects/data-analytics/">
+EXPLORE ↗
+</a>
+
+</td>
+
+</tr>
+
 
 <tr>
+
+<td width="50%" valign="top">
+
+<img
+  src="assets/images/project-tech.png"
+  width="100%"
+  alt="Technology Project"
+>
+
+<br>
+
+### 03 / TECH
+
+# TECHNOLOGY<br>
+# DEVELOPMENT
+
+Software, APIs, databases,
+systems and digital solutions.
+
+<br>
+
+<a href="./projects/software-development/">
+EXPLORE ↗
+</a>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<img
+  src="assets/images/project-business.png"
+  width="100%"
+  alt="Technology Business Project"
+>
+
+<br>
+
+### 04 / BUSINESS
+
+# TECH +<br>
+# BUSINESS
+
+Technology applied to customer
+experience, business and digital transformation.
+
+<br>
+
+<a href="./projects/technology-business/">
+EXPLORE ↗
+</a>
+
+</td>
+
+</tr>
+</table>
+
+
+<br><br>
+
+---
+
+<!-- ========================================================= -->
+<!--                     TECHNOLOGIES                         -->
+<!-- ========================================================= -->
+
+<table width="100%">
+<tr>
+
+<td width="45%" valign="top">
+
+# 02
+
+# TECHNOLOGY<br>
+# STACK
+
+</td>
+
+<td width="55%" valign="top">
+
+### ARTIFICIAL INTELLIGENCE
+
+`Python` `Generative AI` `LLMs`
+`Prompt Engineering` `Machine Learning`
+
+<br>
+
+### DATA
+
+`SQL` `Excel` `Power BI`
+`Data Analysis` `Data Visualization`
+
+<br>
+
+### DEVELOPMENT
+
+`Git` `GitHub` `HTML` `CSS`
+`APIs` `Databases`
+
+</td>
+
+</tr>
+</table>
+
+
+<br><br>
+
+---
+
+<!-- ========================================================= -->
+<!--                      IMPACT                               -->
+<!-- ========================================================= -->
+
+<div align="center">
+
+# IMPACT
+
+<br>
+
+<table width="90%">
+
+<tr>
+
 <td align="center">
 
-<h2>XX+</h2>
-<p>Projects</p>
+# XX+
+
+<sub>PROJECTS</sub>
 
 </td>
 
 <td align="center">
 
-<h2>XX+</h2>
-<p>Technologies</p>
+# XX
+
+<sub>AI PROJECTS</sub>
 
 </td>
 
 <td align="center">
 
-<h2>XX</h2>
-<p>AI Projects</p>
+# XX
+
+<sub>DATA PROJECTS</sub>
 
 </td>
 
 <td align="center">
 
-<h2>XX</h2>
-<p>Data Projects</p>
+# XX+
+
+<sub>TECHNOLOGIES</sub>
 
 </td>
+
 </tr>
 
 </table>
@@ -340,88 +414,39 @@ Projects that combine:
 </div>
 
 
-<!-- ========================================================= -->
-<!--                       CERTIFICATIONS                       -->
-<!-- ========================================================= -->
+<br><br>
 
-# 🎓 Certifications & Learning
-
-| Certification | Platform | Area |
-|---|---|---|
-| Certification Name | Coursera | Artificial Intelligence |
-| Certification Name | Udemy | Data |
-| Certification Name | UVEG | Technology |
-| Certification Name | — | — |
-
-👉 **[View Certifications](./documentation/certifications/)**
-
+---
 
 <!-- ========================================================= -->
-<!--                       EDUCATION                            -->
+<!--                     PROJECT PROCESS                       -->
 <!-- ========================================================= -->
 
-# 🎓 Education
+<table width="100%">
+<tr>
 
-### Ingeniería en Tecnologías de la Información y Gestión
+<td width="40%" valign="top">
 
-**Universidad Virtual del Estado de Guanajuato — UVEG**
+# 03
 
-📍 Mexico  
-📚 Information Technology & Management
+# HOW I<br>
+# BUILD
 
+</td>
 
-<!-- ========================================================= -->
-<!--                     CURRENT FOCUS                          -->
-<!-- ========================================================= -->
-
-# 🔭 Currently Exploring
-
-<div align="center">
-
-🤖 **Artificial Intelligence**
-
-&nbsp;&nbsp;•&nbsp;&nbsp;
-
-📊 **Data Analytics**
-
-&nbsp;&nbsp;•&nbsp;&nbsp;
-
-🧠 **Generative AI**
-
-&nbsp;&nbsp;•&nbsp;&nbsp;
-
-💻 **Technology**
-
-&nbsp;&nbsp;•&nbsp;&nbsp;
-
-📈 **Digital Business**
-
-</div>
-
-
-<!-- ========================================================= -->
-<!--                      MY APPROACH                           -->
-<!-- ========================================================= -->
-
-# 🧠 How I Build Projects
+<td width="60%" valign="top">
 
 ```text
-        PROBLEM
-           │
-           ▼
-      🔎 RESEARCH
-           │
-           ▼
-      💡 SOLUTION
-           │
-           ▼
-      🛠️ TECHNOLOGY
-           │
-           ▼
-       📊 DATA
-           │
-           ▼
-      🚀 IMPLEMENTATION
-           │
-           ▼
-        📈 IMPACT
+01  PROBLEM
+        ↓
+02  RESEARCH
+        ↓
+03  DATA
+        ↓
+04  SOLUTION
+        ↓
+05  TECHNOLOGY
+        ↓
+06  IMPLEMENTATION
+        ↓
+07  IMPACT
