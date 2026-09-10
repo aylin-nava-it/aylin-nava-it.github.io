@@ -121,7 +121,7 @@ Universidad Virtual del Estado de Guanajuato — UVEG
 
 ## 📫 Connect
 
-[LinkedIn](TU-LINKEDIN) ·
+[LinkedIn](https://www.linkedin.com/in/aylin-nava/) ·
 [GitHub](TU-GITHUB) ·
 [Email](mailto:TU-EMAIL)
 
