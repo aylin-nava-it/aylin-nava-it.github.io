@@ -123,7 +123,7 @@ Universidad Virtual del Estado de Guanajuato — UVEG
 
 [LinkedIn](https://www.linkedin.com/in/aylin-nava/) ·
 [GitHub](TU-GITHUB) ·
-[Email](mailto:"aylinwork.07@gmail.com")
+[Email](mailto: aylinwork.07@gmail.com)
 
 ---
 
