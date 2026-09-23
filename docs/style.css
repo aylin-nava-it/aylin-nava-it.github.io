@@ -24,7 +24,7 @@ body {
 :root {
     --black: #090909;
     --dark: #121212;
-    --dark-border: #242424;
+    --dark-border: #222222;
     --white: #f1f0eb;
     --gray: #c8c6bf;
     --muted: #777777;
@@ -32,11 +32,11 @@ body {
 }
 
 /* =====================================================
-   GLOBAL & LAYOUT
+   ESTRUCTURA GENERAL Y TIPOGRAFÍA SEGURA
 ===================================================== */
 section {
     position: relative;
-    padding: 110px 7vw;
+    padding: 100px 6vw;
     width: 100%;
 }
 
@@ -57,10 +57,11 @@ section {
     color: var(--acid);
 }
 
+/* Reglas tipográficas sin colapso vertical */
 h1, h2, h3 {
     font-weight: 900;
-    line-height: .88;
-    letter-spacing: -2px;
+    line-height: 1.05; /* Se corrige el .86 que encimaba las letras */
+    letter-spacing: -1.5px;
 }
 
 a {
@@ -69,7 +70,7 @@ a {
 }
 
 /* =====================================================
-   NAVIGATION
+   NAVEGACIÓN
 ===================================================== */
 .nav {
     height: 80px;
@@ -124,11 +125,11 @@ a {
    01 / HERO
 ===================================================== */
 .hero {
-    min-height: 90vh;
+    min-height: 88vh;
     display: grid;
-    grid-template-columns: 58% 42%;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     align-items: center;
-    overflow: hidden;
     padding-top: 40px;
 }
 
@@ -138,8 +139,9 @@ a {
 }
 
 .hero h1 {
-    font-size: clamp(65px, 11vw, 170px);
-    margin: 25px 0;
+    font-size: clamp(60px, 9vw, 140px);
+    margin: 20px 0;
+    line-height: 0.95;
 }
 
 .hero h1 span {
@@ -151,11 +153,11 @@ a {
     font-family: "DM Mono", monospace;
     color: var(--acid);
     letter-spacing: 3px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .hero-description {
-    max-width: 480px;
+    max-width: 460px;
     margin-top: 25px;
     color: #999;
     line-height: 1.7;
@@ -164,7 +166,8 @@ a {
 
 .hero-image {
     position: relative;
-    height: 600px;
+    height: 580px;
+    width: 100%;
 }
 
 .hero-image img {
@@ -176,8 +179,8 @@ a {
 
 .image-label {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
+    bottom: 20px;
+    left: 20px;
     background: var(--acid);
     color: black;
     padding: 8px 14px;
@@ -188,8 +191,8 @@ a {
 
 .hero-scroll {
     position: absolute;
-    bottom: 30px;
-    left: 7vw;
+    bottom: 25px;
+    left: 6vw;
     font-family: "DM Mono", monospace;
     font-size: 9px;
     color: #666;
@@ -197,7 +200,7 @@ a {
 
 .hero-scroll span {
     color: var(--acid);
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 /* =====================================================
@@ -205,34 +208,29 @@ a {
 ===================================================== */
 .about {
     display: grid;
-    grid-template-columns: 10% 35% 55%;
-    gap: 30px;
+    grid-template-columns: 80px 1fr 1.5fr;
+    gap: 40px;
 }
 
 .about-title {
-    font-size: clamp(55px, 8vw, 110px);
+    font-size: clamp(48px, 6vw, 90px);
     font-weight: 900;
-    line-height: .85;
+    line-height: 0.9;
 }
 
 .about-title strong {
     color: #999;
 }
 
-.about-content {
-    max-width: 650px;
-}
-
 .large-text {
-    font-size: clamp(24px, 3vw, 38px);
-    line-height: 1.15;
+    font-size: clamp(22px, 2.5vw, 34px);
+    line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: -1px;
+    margin-bottom: 30px;
 }
 
 .about-content p:not(.large-text) {
-    color: #444;
+    color: #555;
     line-height: 1.7;
     margin-bottom: 20px;
     font-size: 15px;
@@ -242,11 +240,11 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .about-tags span {
-    border: 1px solid #777;
+    border: 1px solid #999;
     padding: 8px 12px;
     font-family: "DM Mono", monospace;
     font-size: 10px;
@@ -254,42 +252,43 @@ a {
 }
 
 /* =====================================================
-   03 / PILARES DE GESTIÓN (GRID REFACTORIZADO)
+   CABECERA LIMPIA (EVITA QUE LOS TEXTOS SE ENROLLE)
 ===================================================== */
-.pillars {
-    border-top: 1px solid #222;
-}
-
 .section-top {
     display: flex;
     justify-content: space-between;
     font-family: "DM Mono", monospace;
-    font-size: 10px;
+    font-size: 11px;
     color: #777;
     margin-bottom: 40px;
 }
 
-.section-title-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
-    gap: 30px;
+.section-heading-clean {
+    margin-bottom: 50px;
 }
 
-.section-title-wrap h2 {
-    font-size: clamp(45px, 7vw, 95px);
+.section-heading-clean h2 {
+    font-size: clamp(42px, 6vw, 85px);
+    margin-bottom: 20px;
+    line-height: 0.95;
 }
 
-.section-title-wrap h2 span {
-    color: #555;
+.section-heading-clean h2 span {
+    color: #666;
 }
 
-.section-title-wrap p {
-    max-width: 420px;
+.section-heading-clean p {
+    max-width: 500px;
     color: #888;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+/* =====================================================
+   03 / PILARES DE GESTIÓN (GRID MODERNO)
+===================================================== */
+.pillars {
+    border-top: 1px solid #222;
 }
 
 .pillars-grid {
@@ -301,21 +300,21 @@ a {
 .pillar-card {
     background: var(--dark);
     border: 1px solid var(--dark-border);
-    padding: 35px 30px;
+    padding: 35px 28px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .pillar-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: #444;
 }
 
 .pillar-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 16px;
     display: inline-block;
 }
 
@@ -329,11 +328,10 @@ a {
 }
 
 .pillar-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    line-height: 1.1;
+    font-size: 20px;
+    margin-bottom: 14px;
+    line-height: 1.2;
     color: #fff;
-    letter-spacing: -0.5px;
 }
 
 .pillar-card p {
@@ -343,17 +341,19 @@ a {
 }
 
 /* =====================================================
-   04 / EXPERIENCIA RECIENTE (FEATURED)
+   04 / EXPERIENCIA RECIENTE (SIN DESBORDE)
 ===================================================== */
 .featured-grid {
     display: grid;
-    grid-template-columns: 55% 45%;
-    background: #151515;
+    grid-template-columns: 1fr 1fr;
+    background: #111;
     border: 1px solid #222;
+    overflow: hidden; /* Evita que la tarjeta o el texto salgan */
+    width: 100%;
 }
 
 .featured-image {
-    height: 520px;
+    height: 500px;
     overflow: hidden;
 }
 
@@ -374,7 +374,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #151515;
+    background: #111;
     color: #fff;
 }
 
@@ -384,8 +384,9 @@ a {
 }
 
 .featured-info h2 {
-    font-size: clamp(35px, 5vw, 65px);
+    font-size: clamp(32px, 4vw, 55px);
     margin: 20px 0;
+    line-height: 1.05;
 }
 
 .featured-info p {
@@ -402,45 +403,24 @@ a {
 }
 
 .tech-list span {
-    border: 1px solid #444;
+    border: 1px solid #333;
     padding: 6px 10px;
     font-family: "DM Mono", monospace;
     font-size: 10px;
+    color: #ddd;
 }
 
 .project-link {
     color: var(--acid);
     font-family: "DM Mono", monospace;
     font-size: 11px;
-    margin-top: 10px;
     display: inline-block;
     width: fit-content;
 }
 
 /* =====================================================
-   05 / PROYECTOS Y TRAYECTORIA
+   05 / TRAYECTORIA
 ===================================================== */
-.section-heading {
-    display: grid;
-    grid-template-columns: 10% 45% 45%;
-    margin-bottom: 70px;
-}
-
-.section-heading h2 {
-    font-size: clamp(45px, 7vw, 100px);
-}
-
-.section-heading h2 span {
-    color: #666;
-}
-
-.section-heading p {
-    max-width: 380px;
-    align-self: end;
-    line-height: 1.6;
-    font-size: 14px;
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -448,23 +428,23 @@ a {
 }
 
 .project-card {
-    background: #e5e4de;
+    background: #e2e1dc;
     color: #111;
-    transition: transform .4s ease;
+    transition: transform .3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 }
 
 .dark-card {
-    background: #141414;
+    background: #121212;
     color: white;
     border: 1px solid #222;
 }
 
 .card-image {
-    height: 320px;
+    height: 300px;
     position: relative;
     overflow: hidden;
 }
@@ -474,11 +454,11 @@ a {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    transition: transform .7s ease;
+    transition: transform .6s ease;
 }
 
 .project-card:hover .card-image img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .card-number {
@@ -490,7 +470,7 @@ a {
 }
 
 .card-content {
-    padding: 35px;
+    padding: 30px;
 }
 
 .card-content small {
@@ -504,14 +484,13 @@ a {
 }
 
 .card-content h3 {
-    font-size: clamp(24px, 3vw, 36px);
-    margin: 18px 0;
-    line-height: 0.95;
-    letter-spacing: -1.5px;
+    font-size: 22px;
+    margin: 14px 0;
+    line-height: 1.15;
+    letter-spacing: -1px;
 }
 
 .card-content p {
-    max-width: 420px;
     line-height: 1.6;
     color: #555;
     font-size: 13.5px;
@@ -525,8 +504,9 @@ a {
    06 / STACK
 ===================================================== */
 .stack h2 {
-    font-size: clamp(55px, 8vw, 120px);
-    margin: 20px 0 60px;
+    font-size: clamp(45px, 6vw, 90px);
+    margin: 15px 0 50px;
+    line-height: 0.95;
 }
 
 .stack h2 span {
@@ -537,14 +517,14 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: #ddd;
-    border: 1px solid #ddd;
+    background: #ccc;
+    border: 1px solid #ccc;
 }
 
 .stack-grid > div {
     background: #fff;
-    padding: 40px;
-    min-height: 240px;
+    padding: 40px 30px;
+    min-height: 220px;
 }
 
 .stack-grid small {
@@ -554,39 +534,39 @@ a {
 }
 
 .stack-grid h3 {
-    font-size: 26px;
-    margin: 18px 0;
-    letter-spacing: -1px;
+    font-size: 22px;
+    margin: 15px 0;
+    line-height: 1.15;
 }
 
 .stack-grid p {
     color: #555;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 13.5px;
 }
 
 /* =====================================================
-   07 / NÚMEROS
+   07 / NUMBERS
 ===================================================== */
 .numbers {
     text-align: center;
 }
 
 .numbers h2 {
-    font-size: clamp(60px, 10vw, 140px);
-    margin: 20px 0 70px;
+    font-size: clamp(50px, 8vw, 110px);
+    margin: 20px 0 60px;
 }
 
 .numbers-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
 }
 
 .numbers-grid div {
     padding: 50px 10px;
-    border-right: 1px solid #333;
+    border-right: 1px solid #222;
 }
 
 .numbers-grid div:last-child {
@@ -595,8 +575,10 @@ a {
 
 .numbers-grid strong {
     display: block;
-    font-size: clamp(50px, 7vw, 90px);
+    font-size: clamp(45px, 6vw, 80px);
     color: var(--acid);
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
 .numbers-grid span {
@@ -609,7 +591,7 @@ a {
    08 / CONTACTO
 ===================================================== */
 .contact {
-    min-height: 75vh;
+    min-height: 70vh;
     background: var(--acid);
     color: #080808;
     display: flex;
@@ -622,8 +604,9 @@ a {
 }
 
 .contact h2 {
-    font-size: clamp(55px, 10vw, 140px);
-    margin: 30px 0;
+    font-size: clamp(45px, 8vw, 110px);
+    margin: 25px 0;
+    line-height: 0.95;
 }
 
 .contact h2 span {
@@ -634,22 +617,22 @@ a {
 .contact p {
     max-width: 440px;
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .contact-links {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 .contact-links a {
     border-bottom: 1px solid #111;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     font-family: "DM Mono", monospace;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* =====================================================
@@ -660,13 +643,14 @@ footer {
     color: #666;
     display: flex;
     justify-content: space-between;
-    padding: 25px 7vw;
+    padding: 25px 6vw;
     font-family: "DM Mono", monospace;
     font-size: 9px;
+    border-top: 1px solid #1a1a1a;
 }
 
 /* =====================================================
-   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
+   RESPONSIVO (CELULARES Y TABLETS)
 ===================================================== */
 @media (max-width: 1024px) {
     .pillars-grid {
@@ -674,32 +658,21 @@ footer {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     section {
-        padding: 80px 6vw;
+        padding: 70px 5vw;
     }
 
     .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
+        gap: 30px;
     }
 
     .hero-image {
-        height: 450px;
-        margin-top: 40px;
+        height: 420px;
     }
 
     .about {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 40px;
-    }
-
-    .section-heading {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -709,7 +682,7 @@ footer {
     }
 
     .featured-image {
-        height: 380px;
+        height: 350px;
     }
 
     .featured-info {
@@ -733,21 +706,17 @@ footer {
     }
 
     .numbers-grid div {
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #222;
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
     .pillars-grid {
         grid-template-columns: 1fr;
     }
 
     .nav-center {
         display: none;
-    }
-
-    .hero h1 {
-        font-size: 19vw;
     }
 
     footer {
