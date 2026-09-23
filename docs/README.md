@@ -20,16 +20,16 @@ Ingeniera en Gestión de TI en formación con más de 5 años de trayectoria en 
 
 ---
 
-## 🧠 Areas of Interest
+### 🧠 Áreas de enfoque profesional
 
-| | Area |
-|---|---|
-| 🤖 | Artificial Intelligence |
-| 📊 | Data & Analytics |
-| 💻 | Technology & Software |
-| 🧠 | Generative AI |
-| 📈 | Digital Business |
-| 🏥 | HealthTech |
+| | Área | Enfoque |
+|---|---|---|
+| 🤖 | **Calidad Operativa e IA Aplicada** | Uso de GenAI y Prompt Engineering para optimización de tareas, análisis y documentación |
+| 📊 | **Métricas y Análisis Operativo** | Monitoreo de uso en tableros, seguimiento a reportes y métricas de retención/ROI |
+| ⚙️ | **Estandarización y Flujos Operativos** | Detección de fallas funcionales, checklists y definición de requerimientos técnicos |
+| 🔍 | **Auditoría de Procesos y Casos** | Validación de configuración en CRM (Salesforce) e integración de módulos de pago |
+| 🎯 | **Resolución de Incidencias & SLAs** | Diagnóstico técnico, tipificación estructurada y cumplimiento de niveles de servicio |
+| 🏥 | **Ecosistemas HealthTech SaaS** | Experiencia en adopción de producto y acompañamiento operativo a especialistas médicos |
 
 ---
 
