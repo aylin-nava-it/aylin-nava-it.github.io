@@ -16,12 +16,7 @@
 
 ## 👩🏻‍💻 About Me
 
-I'm an Information Technology & Management Engineering student
-interested in the intersection between **Artificial Intelligence,
-Data, Technology and Business**.
-
-I build digital solutions focused on solving real-world problems
-through technology, data and intelligent systems.
+Ingeniera en Gestión de TI en formación con más de 5 años de trayectoria en operaciones SaaS, Customer Success y soporte técnico especializado. Experiencia en la evaluación y estandarización de procesos operativos, auditoría de interacciones y análisis de datos en plataformas como Salesforce. Especializada en la implementación de herramientas de Inteligencia Artificial Generativa y flujos automatizados para el control de calidad, reducción de churn y optimización de la experiencia del cliente (CSAT/SLAs). Con sólida capacidad para diseñar guías de calibración, eliminar sesgos operativos y coordinar feedback constructivo con equipos multidisciplinarios
 
 ---
 
