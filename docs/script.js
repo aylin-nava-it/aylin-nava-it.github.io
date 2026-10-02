@@ -79,17 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    function openModal(card) {
+function openModal(card) {
         const title = card.getAttribute("data-title") || "";
         const company = card.getAttribute("data-company") || "";
         const desc = card.getAttribute("data-desc") || "";
         const rawImages = card.getAttribute("data-images") || "[]";
 
-        let images = [];
+        let mediaList = [];
         try {
-            images = JSON.parse(rawImages);
+            mediaList = JSON.parse(rawImages);
         } catch (e) {
-            images = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
+            mediaList = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
         }
 
         if (modalTitle) modalTitle.textContent = title;
@@ -97,11 +97,26 @@ document.addEventListener("DOMContentLoaded", () => {
         if (modalDesc) modalDesc.textContent = desc;
 
         if (modalGallery) {
-            modalGallery.innerHTML = images.map((src, index) => `
-                <div class="gallery-item">
-                    <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
-                </div>
-            `).join("");
+            modalGallery.innerHTML = mediaList.map((src, index) => {
+                const isVideo = src.toLowerCase().endsWith(".mp4") || src.includes(".mp4");
+                
+                if (isVideo) {
+                    return `
+                        <div class="gallery-item">
+                            <video autoplay muted loop playsinline controls class="modal-video">
+                                <source src="${src}" type="video/mp4">
+                                Tu navegador no soporta video.
+                            </video>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="gallery-item">
+                            <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
+                        </div>
+                    `;
+                }
+            }).join("");
         }
 
         modal.classList.add("active");
@@ -143,3 +158,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
