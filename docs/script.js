@@ -83,13 +83,14 @@ function openModal(card) {
         const title = card.getAttribute("data-title") || "";
         const company = card.getAttribute("data-company") || "";
         const desc = card.getAttribute("data-desc") || "";
+        const videoSrc = card.getAttribute("data-video");
         const rawImages = card.getAttribute("data-images") || "[]";
 
-        let mediaList = [];
+        let images = [];
         try {
-            mediaList = JSON.parse(rawImages);
+            images = JSON.parse(rawImages);
         } catch (e) {
-            mediaList = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
+            images = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
         }
 
         if (modalTitle) modalTitle.textContent = title;
@@ -97,33 +98,36 @@ function openModal(card) {
         if (modalDesc) modalDesc.textContent = desc;
 
         if (modalGallery) {
-            modalGallery.innerHTML = mediaList.map((src, index) => {
-                const isVideo = src.toLowerCase().endsWith(".mp4") || src.includes(".mp4");
-                
-                if (isVideo) {
-                    return `
-                        <div class="gallery-item">
-                            <video autoplay muted loop playsinline controls class="modal-video">
-                                <source src="${src}" type="video/mp4">
-                                Tu navegador no soporta video.
-                            </video>
-                        </div>
-                    `;
-                } else {
-                    return `
-                        <div class="gallery-item">
-                            <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
-                        </div>
-                    `;
-                }
-            }).join("");
+            let galleryHTML = "";
+
+            // 1. Si existe video asignado, se inserta primero
+            if (videoSrc) {
+                galleryHTML += `
+                    <div class="gallery-item">
+                        <video autoplay muted loop playsinline controls class="modal-video">
+                            <source src="${videoSrc}" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+                `;
+            }
+
+            // 2. Se agregan las imágenes
+            images.forEach((src, index) => {
+                galleryHTML += `
+                    <div class="gallery-item">
+                        <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
+                    </div>
+                `;
+            });
+
+            modalGallery.innerHTML = galleryHTML;
         }
 
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
     }
-
     function closeModal() {
         modal.classList.remove("active");
         modal.setAttribute("aria-hidden", "true");
