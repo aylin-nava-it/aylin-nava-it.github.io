@@ -200,14 +200,14 @@
 </section>
 
 <!-- =====================================================
-     05 / TRAYECTORIA PROFESIONAL (ESTILO EDITORIAL MINIMALISTA)
+     05 / TRAYECTORIA PROFESIONAL (CON MODAL DE EVIDENCIAS)
 ===================================================== -->
 <section class="projects section-dark">
 
     <div class="editorial-heading">
         <div class="heading-meta">
             <span class="section-index">05</span>
-            <p>Resumen de experiencia liderando soporte técnico, aseguramiento operativo y adopción tecnológica en empresas SaaS.</p>
+            <p>Resumen de experiencia liderando soporte técnico, aseguramiento operativo y adopción tecnológica en empresas SaaS. Haz clic en cada tarjeta para ver evidencias.</p>
         </div>
         <h2 class="massive-title">
             TRAYECTORIA<br>
@@ -217,11 +217,16 @@
 
     <div class="project-grid">
 
-        <!-- 01 / DOCTORALIA (DARK CARD) -->
-        <article class="project-card dark-card">
+        <!-- 01 / DOCTORALIA -->
+        <article class="project-card dark-card has-modal" 
+                 data-title="DOCTORALIA | REVENUE CUSTOMER SUCCESS"
+                 data-company="Doctoralia México"
+                 data-desc="Gestión de configuración técnica de módulos de pago, validación en Salesforce y análisis de datos de uso en tableros analíticos."
+                 data-images='["assets/business.jpg", "assets/zona_laboral.jpg"]'>
             <div class="card-image">
                 <img src="assets/business.jpg" alt="Doctoralia Operaciones">
                 <span class="card-number">01</span>
+                <span class="view-evidence-badge">VER EVIDENCIAS ↗</span>
             </div>
             <div class="card-content">
                 <small>DOCTORALIA | 2026 - PRESENTE</small>
@@ -230,11 +235,16 @@
             </div>
         </article>
 
-        <!-- 02 / NEUROFY (LIGHT CARD - CONTRASTE) -->
-        <article class="project-card light-card">
+        <!-- 02 / NEUROFY -->
+        <article class="project-card light-card has-modal"
+                 data-title="NEUROFY | ACCOUNT MANAGER & IA"
+                 data-company="Neurofy LATAM"
+                 data-desc="Configuración de herramientas de IA conversacional para WhatsApp, testeo de prompts y escalamiento estructurado a ingeniería."
+                 data-images='["assets/ai.jpg", "assets/technology.jpg"]'>
             <div class="card-image">
                 <img src="assets/ai.jpg" alt="Neurofy IA Conversacional">
                 <span class="card-number">02</span>
+                <span class="view-evidence-badge">VER EVIDENCIAS ↗</span>
             </div>
             <div class="card-content">
                 <small>NEUROFY | 2025 - 2026</small>
@@ -243,11 +253,16 @@
             </div>
         </article>
 
-        <!-- 03 / TOP DOCTORS (LIGHT CARD - CONTRASTE) -->
-        <article class="project-card light-card">
+        <!-- 03 / TOP DOCTORS -->
+        <article class="project-card light-card has-modal"
+                 data-title="TOP DOCTORS | CLIENT MANAGER & CX"
+                 data-company="Top Doctors LATAM"
+                 data-desc="Soporte y configuración técnica para +350 clínicas, integración de agendas/telemedicina y reportes de Retorno de Inversión (ROI)."
+                 data-images='["assets/data.jpg", "assets/zona_laboral.jpg"]'>
             <div class="card-image">
                 <img src="assets/data.jpg" alt="Top Doctors Latam">
                 <span class="card-number">03</span>
+                <span class="view-evidence-badge">VER EVIDENCIAS ↗</span>
             </div>
             <div class="card-content">
                 <small>TOP DOCTORS | 2022 - 2025</small>
@@ -256,11 +271,16 @@
             </div>
         </article>
 
-        <!-- 04 / SAMSUNG (DARK CARD) -->
-        <article class="project-card dark-card">
+        <!-- 04 / SAMSUNG -->
+        <article class="project-card dark-card has-modal"
+                 data-title="SAMSUNG ELECTRONICS | SOPORTE T2"
+                 data-company="Samsung Electronics"
+                 data-desc="Diagnóstico y resolución remota de conectividad y software bajo SLAs estrictos, documentando trazabilidad en consolas técnicas."
+                 data-images='["assets/technology.jpg", "assets/business.jpg"]'>
             <div class="card-image">
                 <img src="assets/technology.jpg" alt="Samsung Electronics Soporte">
                 <span class="card-number">04</span>
+                <span class="view-evidence-badge">VER EVIDENCIAS ↗</span>
             </div>
             <div class="card-content">
                 <small>SAMSUNG | 2019 - 2022</small>
@@ -371,6 +391,26 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- =====================================================
+     VENTANA EMERGENTE (MODAL DE EVIDENCIAS)
+===================================================== -->
+<div class="evidence-modal" id="evidenceModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-window">
+        <button class="modal-close" id="modalClose" aria-label="Cerrar ventana">✕</button>
+        
+        <div class="modal-header">
+            <span class="modal-tag" id="modalCompany">EMPRESA</span>
+            <h3 id="modalTitle">Título del Cargo</h3>
+            <p id="modalDesc">Descripción técnica y operativa de la experiencia.</p>
+        </div>
+
+        <div class="modal-gallery" id="modalGallery">
+            <!-- Las fotos se insertan automáticamente con JavaScript -->
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
