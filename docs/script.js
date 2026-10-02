@@ -1,76 +1,3 @@
-/* =====================================================
-   ANIMACIÓN DE NÚMEROS / CONTADORES
-===================================================== */
-const counters = document.querySelectorAll("[data-target]");
-
-const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-
-            const counter = entry.target;
-            const target = Number(counter.getAttribute("data-target"));
-            let current = 0;
-            const duration = 1200;
-            const increment = target / (duration / 16);
-
-            const updateCounter = () => {
-                current += increment;
-
-                if (current < target) {
-                    counter.textContent = Math.ceil(current) + "+";
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target + "+";
-                }
-            };
-
-            updateCounter();
-            observer.unobserve(counter);
-        });
-    },
-    {
-        threshold: 0.5
-    }
-);
-
-counters.forEach(counter => {
-    observer.observe(counter);
-});
-
-/* =====================================================
-   MENÚ INTERACTIVO
-===================================================== */
-const menuButton = document.getElementById("menuButton");
-
-if (menuButton) {
-    menuButton.addEventListener("click", () => {
-        document.body.classList.toggle("menu-open");
-    });
-}
-
-/* =====================================================
-   REVELADO SUAVE DE IMÁGENES AL HACER SCROLL
-===================================================== */
-const images = document.querySelectorAll(".project-card, .featured-image");
-
-const revealObserver = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-images.forEach(image => {
-    revealObserver.observe(image);
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        ANIMACIÓN DE NÚMEROS / CONTADORES
@@ -119,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =====================================================
-       REVELADO SUAVE DE IMÁGENES
+       REVELADO SUAVE DE IMÁGENES AL HACER SCROLL
     ===================================================== */
     const images = document.querySelectorAll(".project-card, .featured-image");
     const revealObserver = new IntersectionObserver(
@@ -148,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardsWithModal = document.querySelectorAll(".has-modal");
 
     if (!modal) {
-        console.error("El elemento #evidenceModal no se encontró en el DOM.");
+        console.warn("Elemento #evidenceModal no encontrado.");
         return;
     }
 
@@ -162,20 +89,20 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             images = JSON.parse(rawImages);
         } catch (e) {
-            // Fallback si las comillas vienen alteradas
             images = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
         }
 
-        modalTitle.textContent = title;
-        modalCompany.textContent = company;
-        modalDesc.textContent = desc;
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalCompany) modalCompany.textContent = company;
+        if (modalDesc) modalDesc.textContent = desc;
 
-        // Renderizado de imágenes
-        modalGallery.innerHTML = images.map((src, index) => `
-            <div class="gallery-item">
-                <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
-            </div>
-        `).join("");
+        if (modalGallery) {
+            modalGallery.innerHTML = images.map((src, index) => `
+                <div class="gallery-item">
+                    <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
+                </div>
+            `).join("");
+        }
 
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
@@ -191,12 +118,24 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsWithModal.forEach(card => {
         card.addEventListener("click", (e) => {
             e.preventDefault();
+            e.stopPropagation();
             openModal(card);
         });
     });
 
-    if (modalClose) modalClose.addEventListener("click", closeModal);
-    if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
+    if (modalClose) {
+        modalClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modal.classList.contains("active")) {
