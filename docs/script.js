@@ -85,6 +85,7 @@ function openModal(card) {
         const desc = card.getAttribute("data-desc") || "";
         const videoSrc = card.getAttribute("data-video");
         const rawImages = card.getAttribute("data-images") || "[]";
+        const rawPoints = card.getAttribute("data-points") || "";
 
         let images = [];
         try {
@@ -162,5 +163,18 @@ function openModal(card) {
         }
     });
 });
+
+if (modalDesc) {
+    let descHTML = `<p class="modal-intro">${desc}</p>`;
+    if (rawPoints) {
+        const pointsList = rawPoints.split("|").filter(Boolean);
+        descHTML += `<ul class="modal-bullets">`;
+        pointsList.forEach(point => {
+            descHTML += `<li>${point.trim()}</li>`;
+        });
+        descHTML += `</ul>`;
+    }
+    modalDesc.innerHTML = descHTML;
+}
 
 
