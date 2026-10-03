@@ -79,13 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-function openModal(card) {
+    function openModal(card) {
         const title = card.getAttribute("data-title") || "";
         const company = card.getAttribute("data-company") || "";
         const desc = card.getAttribute("data-desc") || "";
+        const rawPoints = card.getAttribute("data-points") || "";
         const videoSrc = card.getAttribute("data-video");
         const rawImages = card.getAttribute("data-images") || "[]";
-        const rawPoints = card.getAttribute("data-points") || "";
 
         let images = [];
         try {
@@ -96,12 +96,25 @@ function openModal(card) {
 
         if (modalTitle) modalTitle.textContent = title;
         if (modalCompany) modalCompany.textContent = company;
-        if (modalDesc) modalDesc.textContent = desc;
 
+        // Construcción estructurada de descripción y viñetas
+        if (modalDesc) {
+            let descHTML = `<p class="modal-intro">${desc}</p>`;
+            if (rawPoints) {
+                const pointsList = rawPoints.split("|").filter(Boolean);
+                descHTML += `<ul class="modal-bullets">`;
+                pointsList.forEach(point => {
+                    descHTML += `<li>${point.trim()}</li>`;
+                });
+                descHTML += `</ul>`;
+            }
+            modalDesc.innerHTML = descHTML;
+        }
+
+        // Renderizado multimedia (Video + Imágenes)
         if (modalGallery) {
             let galleryHTML = "";
 
-            // 1. Si existe video asignado, se inserta primero
             if (videoSrc) {
                 galleryHTML += `
                     <div class="gallery-item">
@@ -113,7 +126,6 @@ function openModal(card) {
                 `;
             }
 
-            // 2. Se agregan las imágenes
             images.forEach((src, index) => {
                 galleryHTML += `
                     <div class="gallery-item">
@@ -129,6 +141,7 @@ function openModal(card) {
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
     }
+
     function closeModal() {
         modal.classList.remove("active");
         modal.setAttribute("aria-hidden", "true");
@@ -163,18 +176,3 @@ function openModal(card) {
         }
     });
 });
-
-if (modalDesc) {
-    let descHTML = `<p class="modal-intro">${desc}</p>`;
-    if (rawPoints) {
-        const pointsList = rawPoints.split("|").filter(Boolean);
-        descHTML += `<ul class="modal-bullets">`;
-        pointsList.forEach(point => {
-            descHTML += `<li>${point.trim()}</li>`;
-        });
-        descHTML += `</ul>`;
-    }
-    modalDesc.innerHTML = descHTML;
-}
-
-
