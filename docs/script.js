@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     images.forEach(image => revealObserver.observe(image));
 
     /* =====================================================
-       MODAL DE EVIDENCIAS PROFESIONALES
+       MODAL DE EVIDENCIAS PROFESIONALES (MULTIMEDIA ADAPTABLE)
     ===================================================== */
     const modal = document.getElementById("evidenceModal");
     const modalBackdrop = document.getElementById("modalBackdrop");
@@ -87,17 +87,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const videoSrc = card.getAttribute("data-video");
         const rawImages = card.getAttribute("data-images") || "[]";
 
-        let images = [];
+        let mediaList = [];
         try {
-            images = JSON.parse(rawImages);
+            mediaList = JSON.parse(rawImages);
         } catch (e) {
-            images = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
+            mediaList = rawImages.replace(/[\[\]"']/g, "").split(",").map(s => s.trim()).filter(Boolean);
+        }
+
+        // Si la tarjeta define un atributo data-video específico, se inserta al inicio
+        if (videoSrc && !mediaList.includes(videoSrc)) {
+            mediaList.unshift(videoSrc);
         }
 
         if (modalTitle) modalTitle.textContent = title;
         if (modalCompany) modalCompany.textContent = company;
 
-        // Construcción estructurada de descripción y viñetas
+        // Construcción de la descripción y viñetas
         if (modalDesc) {
             let descHTML = `<p class="modal-intro">${desc}</p>`;
             if (rawPoints) {
@@ -111,27 +116,29 @@ document.addEventListener("DOMContentLoaded", () => {
             modalDesc.innerHTML = descHTML;
         }
 
-        // Renderizado multimedia (Video + Imágenes)
+        // Renderizado dinámico: comprueba si cada archivo es video MP4 o imagen
         if (modalGallery) {
             let galleryHTML = "";
 
-            if (videoSrc) {
-                galleryHTML += `
-                    <div class="gallery-item">
-                        <video autoplay muted loop playsinline controls class="modal-video">
-                            <source src="${videoSrc}" type="video/mp4">
-                            Tu navegador no soporta video.
-                        </video>
-                    </div>
-                `;
-            }
+            mediaList.forEach((src, index) => {
+                const isVideo = src.toLowerCase().endsWith(".mp4") || src.toLowerCase().endsWith(".webm");
 
-            images.forEach((src, index) => {
-                galleryHTML += `
-                    <div class="gallery-item">
-                        <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
-                    </div>
-                `;
+                if (isVideo) {
+                    galleryHTML += `
+                        <div class="gallery-item">
+                            <video controls playsinline preload="metadata" class="modal-video">
+                                <source src="${src}" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                    `;
+                } else {
+                    galleryHTML += `
+                        <div class="gallery-item">
+                            <img src="${src}" alt="Evidencia ${index + 1} - ${company}" loading="lazy">
+                        </div>
+                    `;
+                }
             });
 
             modalGallery.innerHTML = galleryHTML;
@@ -146,6 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.remove("active");
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
+
+        // Pausa automática de videos activos al cerrar la ventana modal
+        if (modalGallery) {
+            const activeVideos = modalGallery.querySelectorAll("video");
+            activeVideos.forEach(v => v.pause());
+        }
     }
 
     cardsWithModal.forEach(card => {
