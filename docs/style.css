@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap');
 
 /* =====================================================
-   RESET Y BASE
+   RESET Y BASE (PREVENCIÓN DE SCROLL BLANCO EN MÓVILES)
 ===================================================== */
 * {
     margin: 0;
@@ -9,15 +9,20 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #1A1412;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: #FAF7F2;
     color: #241D1A;
     font-family: "Plus Jakarta Sans", sans-serif;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -25,29 +30,24 @@ body {
    PALETA EDITORIAL NEAPOLITAN & VARIABLES
 ===================================================== */
 :root {
-    /* Fondos oscuros sofisticados (Espresso & Moca) */
     --black: #1A1412;
     --dark: #241D1B;
     --dark-surface: #2E2522;
     --dark-border: rgba(246, 216, 214, 0.15);
 
-    /* Fondos claros cálidos (Crema / Vainilla) */
     --white: #FAF7F2;
     --cream: #F5EFEB;
     --card-light: #FFFFFF;
     
-    /* Acentos Femeninos & Tecnológicos */
-    --pink-accent: #E89BAE;      /* Rosa pétalo vibrante y refinado */
-    --pink-soft: #F6D8D6;        /* Tono Neapolitan base */
-    --pink-bubble: #F0C5D4;      /* Rosa empolvado */
+    --pink-accent: #E89BAE;
+    --pink-soft: #F6D8D6;
+    --pink-bubble: #F0C5D4;
     --pink-glow: rgba(232, 155, 174, 0.25);
     
-    /* Textos & Neutros */
-    --espresso: #604734;         /* Chocolate editorial Neapolitan */
+    --espresso: #604734;
     --text-muted: #8E7C75;
     --light-border: #E8DFD8;
     
-    /* Variable compatible */
     --acid: var(--pink-accent);
 }
 
@@ -179,7 +179,7 @@ a {
 }
 
 .hero h1 {
-    font-size: clamp(60px, 8.5vw, 130px);
+    font-size: clamp(54px, 8vw, 120px);
     margin: 20px 0;
     line-height: 0.92;
     font-weight: 900;
@@ -337,7 +337,7 @@ a {
 }
 
 /* =====================================================
-   CABECERA LIMPIA
+   CABECERA DE SECCIÓN
 ===================================================== */
 .section-top {
     display: flex;
@@ -545,19 +545,24 @@ a {
     margin: 0;
 }
 
+/* Título con contención estricta para evitar desborde */
 .massive-title {
-    font-size: clamp(55px, 8.5vw, 130px);
+    font-size: clamp(32px, 6vw, 98px);
     font-weight: 900;
-    line-height: 0.88;
-    letter-spacing: -2px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
     margin: 0;
     color: #FAF7F2;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .massive-title span {
     font-family: "Playfair Display", serif;
     font-style: italic;
     color: var(--pink-accent);
+    display: inline-block;
 }
 
 .project-grid {
@@ -799,7 +804,7 @@ a {
 }
 
 /* =====================================================
-   08 / CONTACTO EDITORIAL ROSA
+   08 / CONTACTO EDITORIAL
 ===================================================== */
 .contact {
     min-height: 70vh;
@@ -879,7 +884,7 @@ footer {
 }
 
 /* =====================================================
-   MODAL DE EVIDENCIAS EDITORIAL
+   MODAL DE EVIDENCIAS
 ===================================================== */
 .has-modal {
     cursor: pointer;
@@ -1097,7 +1102,7 @@ footer {
 }
 
 /* =====================================================
-   RESPONSIVO
+   RESPONSIVO (OPTIMIZADO PARA PANTALLAS PEQUEÑAS)
 ===================================================== */
 @media (max-width: 1024px) {
     .pillars-grid {
@@ -1105,9 +1110,9 @@ footer {
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     section {
-        padding: 75px 5vw;
+        padding: 60px 5vw;
     }
 
     .hero {
@@ -1129,7 +1134,7 @@ footer {
     }
 
     .featured-image {
-        height: 350px;
+        height: 320px;
     }
 
     .featured-info {
@@ -1138,6 +1143,22 @@ footer {
 
     .project-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card-image {
+        height: 260px;
+    }
+
+    .heading-meta {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .massive-title {
+        font-size: clamp(30px, 8vw, 60px);
+        letter-spacing: -1px;
     }
 
     .stack-grid {
@@ -1164,6 +1185,11 @@ footer {
 
     .nav-center {
         display: none;
+    }
+
+    .massive-title {
+        font-size: clamp(26px, 7.8vw, 40px);
+        line-height: 1.05;
     }
 
     footer {
